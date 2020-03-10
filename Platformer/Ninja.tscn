@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/ninja/Idle__008.png" type="Texture" id=2]
@@ -23,21 +23,18 @@
 [ext_resource path="res://Sprites/ninja/Idle__005.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/ninja/Idle__000.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/ninja/Jump__008.png" type="Texture" id=23]
+[ext_resource path="res://weapon.gd" type="Script" id=24]
+[ext_resource path="res://pixel_gun.png" type="Texture" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 30 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 22 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 2 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "idle",
 "speed": 8.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 4 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 17 ) ],
 "loop": true,
@@ -48,9 +45,15 @@ animations = [ {
 "loop": true,
 "name": "fall",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
 [node name="Ninja" type="KinematicBody2D"]
+position = Vector2( -1.22943, -0.614716 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -59,7 +62,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -69,8 +71,18 @@ current = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3.09944e-06, -1.90735e-06 )
 scale = Vector2( 0.22069, 0.123077 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "idle"
-__meta__ = {
-"_edit_group_": true
-}
+
+[node name="weapon" type="Sprite" parent="AnimatedSprite"]
+position = Vector2( 100, 60 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 25 )
+script = ExtResource( 24 )
+
+[node name="bullet_start" type="Position2D" parent="AnimatedSprite/weapon"]
+position = Vector2( 1000, -80 )
+rotation = -0.977384
+scale = Vector2( 4.53124, 8.125 )
+
+[node name="bc" type="Node" parent="."]
