@@ -10,4 +10,5 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="lifetime" type="Timer" parent="."]
+autostart = true
 [connection signal="timeout" from="lifetime" to="." method="_on_lifetime_timeout"]

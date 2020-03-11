@@ -19,7 +19,9 @@ func _process(delta):
 	motion.y += gravity
 	
 	if Input.is_action_pressed("shoot"):
-		shoot()
+		if $gun_timer:
+			if $gun_timer.time_left == 0:
+				shoot()
 	
 	if Input.is_action_pressed("rechts"):
 		motion.x = min(motion.x + acc, max_speed)
@@ -58,6 +60,7 @@ func _process(delta):
 	
 
 func shoot():
+	$gun_timer.start()
 	var bullet = preload("res://Bullet.tscn").instance()
 	if(bullet_container):
 		bullet_container.add_child(bullet)
