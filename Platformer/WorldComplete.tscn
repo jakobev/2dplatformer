@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://portal.png" type="Texture" id=1]
+[ext_resource path="res://WorldComplete.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.14285, 10 )
+
+[node name="WorldComplete" type="Area2D"]
+scale = Vector2( 3.5, 5 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.75, 0.5 )
+shape = SubResource( 1 )
+
+[node name="portal" type="Sprite" parent="."]
+position = Vector2( -2.69413e-05, -0.425 )
+scale = Vector2( 0.0641605, 0.0392222 )
+texture = ExtResource( 1 )

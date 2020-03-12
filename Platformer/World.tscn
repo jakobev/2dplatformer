@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://jungleTilesSet.tres" type="TileSet" id=1]
+[ext_resource path="res://dirtAutoTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=4]
@@ -14,9 +14,8 @@
 [ext_resource path="res://Sprites/Player/Jump0.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=13]
 [ext_resource path="res://Ninja.tscn" type="PackedScene" id=14]
+[ext_resource path="res://WorldComplete.tscn" type="PackedScene" id=15]
 [ext_resource path="res://wasteland.png" type="Texture" id=34]
-[ext_resource path="res://portal.png" type="Texture" id=36]
-[ext_resource path="res://WorldComplete.gd" type="Script" id=37]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 30 )
@@ -28,19 +27,16 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "run",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 9.14285, 10 )
 
 [node name="World" type="Node"]
 
@@ -68,15 +64,6 @@ animation = "idle"
 [node name="Ninja" parent="." instance=ExtResource( 14 )]
 position = Vector2( 384, 192 )
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 65564, 0, 0, 65565, 1, 0, 65566, 2, 0, 131100, 6, 0, 131101, 7, 0, 131102, 8, 0, 262165, 0, 0, 262166, 2, 0, 327701, 3, 0, 327702, 5, 0, 393237, 3, 0, 393238, 5, 0, 458763, 0, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 2, 0, 524299, 3, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524304, 4, 0, 524305, 4, 0, 524306, 4, 0, 524307, 4, 0, 524308, 4, 0, 524309, 4, 0, 524310, 5, 0, 589835, 6, 0, 589836, 7, 0, 589837, 7, 0, 589838, 7, 0, 589839, 7, 0, 589840, 7, 0, 589841, 7, 0, 589842, 7, 0, 589843, 7, 0, 589844, 7, 0, 589845, 7, 0, 589846, 8, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -93,19 +80,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="WorldComplete" type="Area2D" parent="."]
-position = Vector2( 928, -10 )
-scale = Vector2( 3.5, 5 )
-script = ExtResource( 37 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="WorldComplete" parent="." instance=ExtResource( 15 )]
+position = Vector2( 960, -32 )
+world_scene = "res://World2.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldComplete"]
-scale = Vector2( 0.75, 0.5 )
-shape = SubResource( 4 )
-
-[node name="portal" type="Sprite" parent="WorldComplete"]
-position = Vector2( -2.69413e-05, -0.425 )
-scale = Vector2( 0.0641605, 0.0392222 )
-texture = ExtResource( 36 )
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 1, 0, 6, 2, 0, 196609, 3, 0, 196609, 4, 0, 196609, 5, 0, 196609, 6, 0, 10, 7, 0, 65536, 8, 0, 65536, 9, 0, 65536, 10, 0, 2, 65537, 0, 65541, 65542, 0, 65537, 65543, 0, 131072, 65544, 0, 4, 65545, 0, 196619, 65546, 0, 131074, 65550, 0, 1, 65551, 0, 2, 131073, 0, 65541, 131080, 0, 65537, 131081, 0, 131072, 131082, 0, 65545, 131086, 0, 65546, 131087, 0, 65538, 196609, 0, 65542, 196610, 0, 7, 196618, 0, 131077, 196621, 0, 6, 196622, 0, 65543, 262146, 0, 65542, 262147, 0, 7, 262156, 0, 6, 262157, 0, 65543, 327683, 0, 65542, 327684, 0, 196609, 327685, 0, 196609, 327686, 0, 196609, 327687, 0, 196609, 327688, 0, 196609, 327689, 0, 196609, 327690, 0, 196609, 327691, 0, 196609, 327692, 0, 65543 )

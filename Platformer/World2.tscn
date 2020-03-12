@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://jungleTilesSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Ninja.tscn" type="PackedScene" id=2]
 [ext_resource path="res://woman/464d8df5d0a24f46fea0c262c8e167a2-0.png" type="Texture" id=3]
+[ext_resource path="res://WorldComplete.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 64 )
@@ -34,3 +35,7 @@ shape = SubResource( 1 )
 scale = Vector2( 0.585366, 0.438356 )
 texture = ExtResource( 3 )
 flip_h = true
+
+[node name="WorldComplete" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 320 )
+world_scene = "res://World.tscn"
