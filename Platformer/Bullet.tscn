@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://new_dildo.png" type="Texture" id=1]
+[ext_resource path="res://Bullet.gd" type="Script" id=2]
+
+[node name="Sprite" type="Sprite"]
+position = Vector2( 5.6982e-05, -1.05264 )
+scale = Vector2( 0.1, 0.0964912 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="lifetime" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="lifetime" to="." method="_on_lifetime_timeout"]

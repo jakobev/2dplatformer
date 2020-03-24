@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/ninja/Idle__008.png" type="Texture" id=2]
@@ -23,11 +23,14 @@
 [ext_resource path="res://Sprites/ninja/Idle__005.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/ninja/Idle__000.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/ninja/Jump__008.png" type="Texture" id=23]
+[ext_resource path="res://weapon.gd" type="Script" id=24]
+[ext_resource path="res://pixel_gun.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Tiles/Sky.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 30 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 22 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 2 ), ExtResource( 8 ) ],
 "loop": true,
@@ -51,6 +54,7 @@ animations = [ {
 } ]
 
 [node name="Ninja" type="KinematicBody2D"]
+position = Vector2( -1.22943, -0.614716 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -59,7 +63,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -69,8 +72,32 @@ current = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3.09944e-06, -1.90735e-06 )
 scale = Vector2( 0.22069, 0.123077 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "idle"
-__meta__ = {
-"_edit_group_": true
-}
+
+[node name="weapon" type="Sprite" parent="AnimatedSprite"]
+position = Vector2( 100, 60 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 25 )
+script = ExtResource( 24 )
+
+[node name="bullet_start" type="Position2D" parent="AnimatedSprite/weapon"]
+position = Vector2( 1000, -80 )
+rotation = -0.977384
+scale = Vector2( 4.53124, 8.125 )
+
+[node name="bc" type="Node" parent="."]
+
+[node name="gun_timer" type="Timer" parent="."]
+wait_time = 0.237
+one_shot = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 640, 640 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 26 )
+centered = false

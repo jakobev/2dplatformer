@@ -1,0 +1,188 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 29.06.2018 22:00:04
+
+newmtl 11___Default9
+	Ns 34.0000
+	Ni 1.5000
+	d 0.3900
+	Tr 0.6100
+	Tf 0.3900 0.3900 0.3900 
+	illum 2
+	Ka 0.3216 0.4000 1.0000
+	Kd 0.3216 0.4000 1.0000
+	Ks 0.7560 0.7560 0.7560
+	Ke 0.0000 0.0000 0.0000
+	map_refl Map__57_Reflect_Refract.tga
+
+newmtl 11___Default
+	Ns 34.0000
+	Ni 1.5000
+	d 0.3600
+	Tr 0.6400
+	Tf 0.3600 0.3600 0.3600 
+	illum 2
+	Ka 0.4314 1.0000 0.3216
+	Kd 0.4314 1.0000 0.3216
+	Ks 0.7560 0.7560 0.7560
+	Ke 0.0000 0.0000 0.0000
+	map_refl Map__57_Reflect_Refract.tga
+
+newmtl front
+	Ns 1.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.4078 0.3529 0.2627
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\ideac\Desktop\emma.jpg
+	map_Kd C:\Users\ideac\Desktop\emma.jpg
+
+newmtl DIENTES
+	Ns 1.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Material__56
+	Ns 50.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.7000 0.7000 0.7000
+	Kd 0.7000 0.7000 0.7000
+	Ks 0.7070 0.7070 0.7070
+	Ke 0.0000 0.0000 0.0000
+
+newmtl back
+	Ns 1.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.4078 0.3529 0.2627
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\ideac\Desktop\emma-backa.jpg
+	map_Kd C:\Users\ideac\Desktop\emma-backa.jpg
+
+newmtl córnea
+	Ns 81.0000
+	Ni 1.5000
+	d 0.1500
+	Tr 0.8500
+	Tf 0.1500 0.1500 0.1500 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.9020 0.9412 0.9373
+	Ks 1.0000 1.0000 1.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl iris
+	Ns 100.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.3333 0.2941 0.2627
+	Ks 1.0000 1.0000 1.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\ideac\Desktop\astrid-eye.jpg
+	map_Kd C:\Users\ideac\Desktop\astrid-eye.jpg
+	map_refl C:\Users\ideac\Desktop\LAKEREM.JPG
+
+newmtl globo
+	Ns 49.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.8196 0.8039 0.7098
+	Ks 0.3278 0.3216 0.2839
+	Ke 0.0000 0.0000 0.0000
+
+newmtl pupila
+	Ns 40.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl polka2
+	Ns 2.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\ideac\Desktop\polkadot.gif
+	map_Kd C:\Users\ideac\Desktop\polkadot.gif
+
+newmtl hair2
+	Ns 0.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.7000 0.7000 0.7000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\ideac\Desktop\hair.jpg
+	map_Kd C:\Users\ideac\Desktop\hair.jpg
+	map_d C:\Users\ideac\Desktop\hair3.jpg
+
+newmtl 0_a_fuku_08_01__86
+	Ns 2.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\ideac\Desktop\a_fuku_08_01.bmp
+	map_Kd C:\Users\ideac\Desktop\a_fuku_08_01.bmp
+
+newmtl polka
+	Ns 2.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\ideac\Desktop\polkadot.gif
+	map_Kd C:\Users\ideac\Desktop\polkadot.gif

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/emma2.obj-bcaeefe06dec221c80a91348990cecd0.mesh"
+
+[deps]
+
+files=[ "res://.import/emma2.obj-bcaeefe06dec221c80a91348990cecd0.mesh" ]
+
+source_file="res://emma/emma2.obj"
+dest_files=[ "res://.import/emma2.obj-bcaeefe06dec221c80a91348990cecd0.mesh", "res://.import/emma2.obj-bcaeefe06dec221c80a91348990cecd0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

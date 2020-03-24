@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://KinematicBody.gd" type="Script" id=1]
+[ext_resource path="res://air/A380.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.576471, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="CapsuleMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.160784, 0.898039, 0.137255, 1 )
+metallic = 0.24
+
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 20, 20 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 10.1587, 0.001, 11.1596 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.987083, 0, 0.160209, -0.0601862, 0.926752, 0.370822, -0.148474, -0.375674, 0.914781, 1.35054, 7.27681, 12.3634 )
+fov = 86.8955
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 3.78535, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -0.99993, 0.011798, 0, -0.011798, -0.99993, 0, 0, 1.19209e-07 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Head" type="Spatial" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.38315e-07, -0.848973 )
+
+[node name="Camera" type="Camera" parent="KinematicBody/Head"]
+transform = Transform( 0.997346, 0.0362201, -0.0631559, 0.0694708, -0.213946, 0.974372, 0.0217799, -0.976174, -0.215894, 0.0126392, -0.474991, 0.0826025 )
+current = true
+fov = 95.4418
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0969257, -0.262508, -0.231497 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.216936, 0 )
+shape = SubResource( 6 )
+
+[node name="A380" type="MeshInstance" parent="."]
+transform = Transform( -0.00387516, -0.00921863, -1.50191e-09, 0, -1.62921e-09, 0.01, -0.00921863, 0.00387516, 6.31343e-10, 1.21824, 7.62972, -33.3435 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
